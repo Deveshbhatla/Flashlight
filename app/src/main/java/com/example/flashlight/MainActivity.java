@@ -38,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
         buttonEnable.setEnabled(!isEnabled);
         imageFlashlight.setEnabled(isEnabled);
-        buttonEnable.setOnClickListener(new View.OnClickListener() {
+        buttonEnable.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view) {
                 ActivityCompat.requestPermissions(MainActivity.this, new String[] {Manifest.permission.CAMERA}, CAMERA_REQUEST);
@@ -48,12 +49,14 @@ public class MainActivity extends AppCompatActivity {
         imageFlashlight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (hasCameraFlash) {
+                if (hasCameraFlash)
+                {
                     if (flashLightStatus)
                         flashLightOff();
                     else
                         flashLightOn();
-                } else {
+                } else
+                    {
                     Toast.makeText(MainActivity.this, "No flash available on your device",
                             Toast.LENGTH_SHORT).show();
                 }
@@ -88,14 +91,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch(requestCode) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
+    {
+        switch(requestCode)
+        {
             case CAMERA_REQUEST :
-                if (grantResults.length > 0  &&  grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                if (grantResults.length > 0  &&  grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                {
                     buttonEnable.setEnabled(false);
                     buttonEnable.setText("Camera Enabled");
                     imageFlashlight.setEnabled(true);
-                } else {
+                } else
+                    {
                     Toast.makeText(MainActivity.this, "Permission Denied for the Camera", Toast.LENGTH_SHORT).show();
                 }
                 break;
