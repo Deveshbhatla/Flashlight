@@ -30,11 +30,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         imageFlashlight = (ImageView) findViewById(R.id.imageFlashlight);
         buttonEnable = (Button) findViewById(R.id.buttonEnable);
-
-        final boolean hasCameraFlash = getPackageManager().
-                hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH);
         boolean isEnabled = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                 == PackageManager.PERMISSION_GRANTED;
+        final boolean hasCameraFlash = getPackageManager().
+                hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH);
+
 
         buttonEnable.setEnabled(!isEnabled);
         imageFlashlight.setEnabled(isEnabled);
