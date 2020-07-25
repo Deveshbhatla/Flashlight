@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#00975F5F">
+
+    android:background="#000000">
 
     <ImageView
         android:id="@+id/imageFlashlight"
@@ -20,6 +21,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp"
         android:background="#00D1AEAE"
+        android:textColor="#ffff"
         android:text="@string/give_permission"
         android:textSize="20sp" />
 
